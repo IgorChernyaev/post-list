@@ -4,27 +4,30 @@ import React, { Component } from 'react';
 //import './App.css';
 
 class App extends React.Component {
-  
-  listPosts() {
-    return (fetch(`http://jsonplaceholder.typicode.com/posts`)
-    .then(response=>response.json())) 
+
+  componentDidMount() {
+    Promise.all([this.listPosts(), this.listComments()])
+      .then (response => console.log(response))  
   }
 
-  listComments() {
-    return (fetch(`https://jsonplaceholder.typicode.com/comments`)
-    .then(response=>response.json())) 
+  listPosts = () => {
+    return fetch(`http://jsonplaceholder.typicode.com/posts`)
+      .then(response=>response.json())
+  }
+
+  listComments = () => {
+    return fetch(`https://jsonplaceholder.typicode.com/comments`)
+      .then(response=>response.json()) 
   } 
 
-  componentDidMount(){
-    Promise.all([this.listPosts(), this.listComments()])
-    .then(response => console.log(response))
-  }
+  
 
   render() {
-    return(
+    return (
       <div>
+     
       </div>
-   )
+    )
   }
 }
 
