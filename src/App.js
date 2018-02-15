@@ -7,7 +7,15 @@ class App extends React.Component {
 
   componentDidMount() {
     Promise.all([this.listPosts(), this.listComments()])
-      .then (response => console.log(response))  
+      .then (response => {
+        const posts = response [0];
+        const comments = response [1];
+        const items = posts.map(post => {
+          const exactComments = comments.filter(comment => post.id === comment.postId);
+          return { ...post, comment: exactComments }
+        });
+        console.log(items)  
+      })
   }
 
   listPosts = () => {
