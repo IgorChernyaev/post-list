@@ -1,28 +1,102 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  color: #424242;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+* {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
+  background-color: #eee;
 }
 
-.App-title {
-  font-size: 1.5em;
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
-.App-intro {
-  font-size: large;
+.post {
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.post__title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.post__body {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.post__metadata {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #bbb;
+}
+
+.post__author,
+.post__id {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.post__comments {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.comment {
+  display: block;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.comment__body {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.comment__top {
+  display: flex;
+  margin-bottom: 8px;
+  color: #000;
+
+}
+
+.comment__name {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+  color: #448bfc;
+}
+
+.comment__id {
+  display: flex;
+  float: right;
+  margin-bottom: 8px;
+  color: #bbb;
+  font-size: 12px;
+  line-height: 15px;
 }
